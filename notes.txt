@@ -1,0 +1,206 @@
+Html and css validators.
+Ctrl+shift+p   ->  wrap  ->  nany tag you want!
+html entities like &nbsp &lt &gt
+absulote and ralative addresing
+href to id
+href to # -> back to home
+href mailto:example@gmail.com
+download attribute for <a></a> tag
+caniuse.com for checking support
+insert the alternative text for video and audio tags inside them!
+control + autoplay + loop attr for videos and audios tags!
+colspan for tables!
+figure and figcaption for img tag
+time tag for date and attr -> dataTime
+normalize css
+a[href^='http']  start
+a[href*='http']  contain
+a[href$='http']  ends
+combining two conditions ->   a[href^='http'][href$='com']
+#products p  -> all p tags inside the element with #products id
+#products > p  -> all p tags which are direct children inside the element with #products id
+#products + p  -> the p tag which is imidiatly is the sibling with #products id
+#products ~ p  -> the all p tag which are  sibling with #products id
+these relational selectors are not efficient and they are fragile! Why?? ans: left to right!
+pseudo classes -> like nth-child last-of-type  and  :visited :hover :focus  :link
+use :hover and :focus togheter! for css clean code
+differece between pseudo element and pseudo classes: pseudo element for stying a part of an element and pseudo class for styling an element in a certain state!
+pseudo elements -> ::first-line ::selection ::after ::before
+specification in selectiors -> 1 10 100 score for element - class/attr - id
+whats the differece between initial and ingeritance!
+css trick.com
+what is margin collapsing?
+set box-sizing for *::after and *::before 
+inline elements cant get width and height!! use inline-block display!
+space between element in html tags has shown in the ui!
+differece between em and rem!
+trick -> html{ font-size:62.5%} and now each rem is 10px!
+default position for each elemetn is : static
+by chaning position for each element to relative we can change their position by top left right bottom
+flex -> flex-basis + flex-grow + flex-shrink
+flex-basis => the width or height of the elements it depends on the flex-direction!
+defference between visibility hidden and display none!
+set print media query for body font = 16pt and margin 5cm!
+what is web safety font? the fonts that almost all of browsers have them!
+why we describe 3 fonts for website?
+WOFF and Woff2 are more compressed fonts for web!
+also we can use system fonts...
+best practice for font-size =>
+html{
+    font-size: 62.5%
+}
+for body and the other elements use rem! in this situation 1rem=10px
+and use media query for devices and change:for example:
+html{
+    font-size: 100%
+}
+for headings always define a margin in rem!
+for line-height always set 1.5 (dont use rem for that just set 1.5)
+why its better to use rem instead of px? because if users change the size of browers setting it sets by rem but px!
+usefull tip for indent paragraph => 
+p + p {
+    text-indent : 1rem
+} 
+text-overflow: ellipsiss!
+p{
+    column-count:2
+    column-gap:2rem
+    column-rule:3px dotted #efefef
+}
+the differece between Raster(jpeg,png,webp,gif) and vector(svg created by illestrator!) => raster are made of pixcels but vector are not
+different img formats => jpeg,gif,png,webp  and just(gif,png,webp)  are transparent!!!
+background property=>
+background: bg-color bg-image position/bg-size bg-repeat bg-origin bg-clip bg-attachment initial|inherit;
+elemet{
+  height: 100px;
+  background:  url();
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+} 
+whats css sprite techniqe??? combining several images and use just one image for background
+css clip generator => clip a shape of image using clip-path property
+how to support high-density screens?
+<img
+  srcset="elva-fairy-320w.jpg 400w, elva-fairy-480w.jpg 800w elva-fairy-640w.jpg 1200w"
+  src="elva-fairy-640w.jpg"
+  alt="Elva dressed as a fairy"
+  sizes="..."
+   />
+  img {
+  width: 320px;
+}
+we can use 2x 3x and 4x for defferent devices. but its better to use w!
+https://www.responsivebreakpoints.com/
+we can use picture element for IE browsers!
+best practice =>
+<picture>
+    <source type="image/webp" srcset="image.webp">
+    <source type="image/jpeg" srcset="image.jpg">
+    <img src="image.jpg" alt="bla bla bla">
+</picture>
+Art direction in action =>
+<picture>
+    <source media="(max-width:500px)" srcset="image-cropped.webp">
+    <source media="(min-width:500px)" srcset="image.jpg">
+    <img src="image.jpg" alt="bla bla bla">
+</picture>
+https://www.svgbackgrounds.com/
+button type reset and button type submit!
+input{
+    outline:0
+}
+input:focus{
+    ...
+}
+textarea{
+resize:none
+}
+whats the defference between disable and readonly atrr for input elements?
+disable doesnt send to the server but readonly does!
+autofocus!
+autocomplete="off"
+<input type="text" list="countries">
+<datalist id="countries">
+    <option data-value="1">c-1</option>
+    <option data-value="2">c-2</option>
+    <option data-value="3">c-3</option>
+</datalist>
+    <select name="" id="" >
+        <optgroup label="group-1">
+        <option value="1" >1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </optgroup>
+    <optgroup label="group-2">
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+    </optgroup>
+</select>
+ multiple attr for select!
+ selected attr for option
+ checked or disable attr for checkbox
+<input type="file" accept="image/*">
+<input type="file" accept=".jpg, .png">
+input type hidden for sending some data to the server but not sensitive data because its visible on html file
+use formspree for free backend for forms.
+differece between POST and GET : POST send data in body of request but GET send data in url
+in trasform order is matter:
+transform: rotate(45deg) translateX(20px);
+transform: translateX(20px) rotate(45deg) ;
+are different!
+transform: perspective(100px);
+how to create reusable anumation?
+:root {
+  --color-primary: red;
+  --font-size-primary: 16px;
+  --border-size-primary: 1px;
+  --border-radius-primary: 50px;
+}
+list style image property:
+.list--tick {
+	list-style-image: url(../images/tick.svg);
+	padding-left: 3rem;
+	color: var(--color-headings);
+}
+How to use SVG files and why?
+for changing svgs file color we use fill!
+styling placeholder ->
+::placeholder {
+	color: #cdcbd7;
+}
+use flex-grow or flex for child item in parent element with display flex to grow each one or use width based on percent!
+what is the difference between height and max-height in css:
+height: This property sets the height of an element explicitly. It specifies the exact height that an element should be rendered, regardless of its content.
+but max-height If the content is less than this maximum height, the element will adjust its height accordingly. 
+calc method  ->  padding-bottom: calc(var(--padding-vertical) + 4rem)
+full list of meta tags => https://ogp.me/
+Parcel builing tool!
+add aria-label for efficient accessebility!
+omptimaizing with web.dev
+lighthouse extenstion!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
